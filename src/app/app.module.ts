@@ -3,16 +3,22 @@ import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { HeroesComponent } from './heroes/heroes.component';
-
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+import { environment } from '../environments/environment';
+import { AppNavbarComponent } from './app-navbar/app-navbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeroesComponent
+    AppNavbarComponent
   ],
   imports: [
-    BrowserModule, FormsModule
+    BrowserModule, FormsModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule,
+    AngularFireAuthModule
   ],
   providers: [],
   bootstrap: [AppComponent]
