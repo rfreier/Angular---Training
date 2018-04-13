@@ -42,3 +42,5 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+.vscode/settings.json
+work_config.code-workspace
